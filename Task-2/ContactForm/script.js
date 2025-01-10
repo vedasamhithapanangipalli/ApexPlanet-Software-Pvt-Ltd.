@@ -18,5 +18,6 @@ function validateForm() {
         alert("Message is required.");
         return false;
     }
+    alert("Thank you for submitting this contact form");
     return true; // Form is valid(when all 3 fields are entered and also in the correct format)
 }
