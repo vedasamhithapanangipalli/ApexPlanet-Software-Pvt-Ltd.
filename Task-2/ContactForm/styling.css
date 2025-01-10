@@ -1,4 +1,3 @@
-/* General body and page styling */
 body {
     font-family: Arial, sans-serif;
     background-color: 	#c2a3fd;
@@ -8,7 +7,6 @@ body {
     height: 100vh;
     margin: 0;
 }
-/* Form container styling */
 .form-container {
     background-color: white;
     padding: 50px;
@@ -21,7 +19,6 @@ h1 {
     text-align: center;
     color: #333;
 }
-/* Styling input and textarea fields */
 input, textarea {
     width: 100%;
     padding: 10px;
@@ -34,7 +31,6 @@ textarea {
     resize: vertical;
     height: 110px;
 }
-/* Button styling */
 button {
     width: 100%;
     padding: 10px;
