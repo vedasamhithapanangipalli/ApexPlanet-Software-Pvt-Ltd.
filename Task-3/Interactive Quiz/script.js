@@ -9,31 +9,26 @@ class QuizApp {
         this.optionsContainer = document.querySelector('.options-container');
         this.progressBar = document.getElementById('progress');
         this.scoreElement = document.getElementById('score');
-        
         // Quiz state
         this.currentQuestion = 0;
         this.score = 0;
         this.questions = [];
-        
         // Bind methods
         this.init = this.init.bind(this);
         this.loadQuestions = this.loadQuestions.bind(this);
         this.displayQuestion = this.displayQuestion.bind(this);
         this.handleAnswer = this.handleAnswer.bind(this);
         this.showScore = this.showScore.bind(this);
-        
         // Initialize quiz
         this.init();
     }
-    
     async init() {
         // Add event listener for restart button
         document.getElementById('restart-button').addEventListener('click', () => {
             this.currentQuestion = 0;
             this.score = 0;
             this.init();
-        });
-        
+        });   
         try {
             await this.loadQuestions();
             this.displayQuestion();
@@ -72,7 +67,6 @@ class QuizApp {
                 correct: 1
             }
         ];
-        
         // Simulate API delay
         await new Promise(resolve => setTimeout(resolve, 1000));
         this.questions = sampleQuestions;
@@ -80,17 +74,13 @@ class QuizApp {
     displayQuestion() {
         const question = this.questions[this.currentQuestion];
         const totalQuestions = this.questions.length;
-        
         // Update progress bar
         this.progressBar.style.setProperty('--progress', `${(this.currentQuestion / totalQuestions) * 100}%`);
-        
         // Update question title and text
         this.questionTitle.textContent = `Question ${this.currentQuestion + 1}/${totalQuestions}`;
         this.questionText.textContent = question.question;
-        
         // Clear previous options
         this.optionsContainer.innerHTML = '';
-        
         // Create new option buttons
         question.options.forEach((option, index) => {
             const button = document.createElement('button');
@@ -100,26 +90,20 @@ class QuizApp {
             this.optionsContainer.appendChild(button);
         });
     }
-    
     async handleAnswer(selectedIndex) {
         const question = this.questions[this.currentQuestion];
         const options = document.querySelectorAll('.option');
-        
         // Disable all options
         options.forEach(option => option.style.pointerEvents = 'none');
-        
         // Show correct/wrong answers
         options[selectedIndex].classList.add(selectedIndex === question.correct ? 'correct' : 'wrong');
         options[question.correct].classList.add('correct');
-        
         // Update score
         if (selectedIndex === question.correct) {
             this.score++;
         }
-        
         // Wait before moving to next question
         await new Promise(resolve => setTimeout(resolve, 1000));
-        
         // Move to next question or show score
         if (this.currentQuestion < this.questions.length - 1) {
             this.currentQuestion++;
