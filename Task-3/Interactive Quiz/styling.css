@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -16,7 +15,6 @@ body {
     align-items: center;
     padding: 20px;
 }
-
 /* Quiz Container */
 .quiz-container {
     background-color: white;
@@ -26,17 +24,14 @@ body {
     max-width: 600px;
     padding: 2rem;
 }
-
 .quiz-header {
     text-align: center;
     margin-bottom: 2rem;
 }
-
 .quiz-header h1 {
     color: #2c3e50;
     margin-bottom: 1rem;
 }
-
 /* Progress bar */
 #progress {
     height: 4px;
@@ -44,7 +39,6 @@ body {
     border-radius: 2px;
     margin-top: 1rem;
 }
-
 #progress::before {
     content: '';
     display: block;
@@ -54,31 +48,26 @@ body {
     width: 0%;
     transition: width 0.3s ease;
 }
-
 /* Question styles */
 .question-container {
     margin-bottom: 2rem;
 }
-
 #question-title {
     color: #2c3e50;
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
-
 #question-text {
     font-size: 1.1rem;
     line-height: 1.5;
     color: #34495e;
 }
-
 /* Options styles */
 .options-container {
     display: grid;
     gap: 1rem;
     margin-bottom: 1rem;
 }
-
 .option {
     background-color: #f8f9fa;
     border: 2px solid #e9ecef;
@@ -89,30 +78,25 @@ body {
     transition: all 0.3s ease;
     text-align: left;
 }
-
 .option:hover {
     background-color: #e9ecef;
     transform: translateY(-2px);
 }
-
 .option.correct {
     background-color: #28a745;
     color: white;
     border-color: #28a745;
 }
-
 .option.wrong {
     background-color: #dc3545;
     color: white;
     border-color: #dc3545;
 }
-
 /* Loading spinner */
 .loading {
     text-align: center;
     padding: 2rem;
 }
-
 .spinner {
     width: 40px;
     height: 40px;
@@ -122,22 +106,18 @@ body {
     margin: 0 auto 1rem;
     animation: spin 1s linear infinite;
 }
-
 @keyframes spin {
     0% { transform: rotate(0deg); }
     100% { transform: rotate(360deg); }
 }
-
 /* Score container */
 #score-container {
     text-align: center;
 }
-
 #score-text {
     font-size: 1.2rem;
     margin: 1rem 0;
 }
-
 .restart-btn {
     background-color: #3498db;
     color: white;
@@ -148,28 +128,23 @@ body {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
 .restart-btn:hover {
     background-color: #2980b9;
 }
-
 /* Utility classes */
 .hide {
     display: none;
 }
-
 /* Media Queries */
 @media (min-width: 768px) {
     .options-container {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 @media (max-width: 480px) {
     .quiz-container {
         padding: 1rem;
-    }
-    
+    }   
     .option {
         padding: 0.8rem;
         font-size: 0.9rem;
