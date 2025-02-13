@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="C:\Users\12sri\Downloads\s logo.jpg">
+    <title>Sam's Store</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <h1 class="title">Sam Store</h1>
+        <nav>
+            <a href="https://www.amazon.in/" target="_blank">Home</a>
+            <a href="#productcontainer" target="_blank">Shop</a>
+            <a href="https://www.amazon.in/deals" target="_blank">Deals</a>
+            <a href="#contactus">Contact</a>
+            <a href="https://www.aboutamazon.in/?utm_source=gateway&utm_medium=footer" target="_blank">About Us</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" id="searchInput" placeholder="Search for products">
+            <button onclick="searchProducts()">
+                <i class="fas fa-search"></i> Search
+            </button>
+            <div class="cart-icon" onclick="toggleCart()">
+                🛒 <span id="cartCount">0</span>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <aside class="filters">
+            <h2>Filters</h2>
+            <label>Category</label>
+            <select id="categoryFilter" onchange="applyFilters()">
+                <option value="">All</option>
+                <option value="electronics">Electronics</option>
+                <option value="clothing">Clothing</option>
+                <option value="home">Home & Kitchen</option>
+                <option value="jewellery">Jewellery</option>
+                <option value="footwear">Footwear</option>
+                <option value="travel">Travel</option>
+            </select>
+            <label>Price Range</label>
+            <input type="number" id="minPrice" placeholder="Min Price" oninput="applyFilters()">
+            <input type="number" id="maxPrice" placeholder="Max Price" oninput="applyFilters()">
+        </aside>
+        <main>
+            <div id="productContainer" class="products"></div>
+        </main>
+    </div>
+    <div id="cartModal" class="cart-modal">
+        <h2>Shopping Cart</h2>
+        <div id="cartItems"></div>
+        <div id="cartTotal"></div>
+        <button class="checkout-btn" onclick="checkout()">Proceed to Checkout</button>
+        <button onclick="closeCart()">Close</button>
+    </div>
+    <footer>© 2025 E-Commerce Website. All rights reserved.<br><br>
+        <section id="contactus">
+        <a href="https://www.facebook.com/AmazonIN" target="_blank">Facebook</a><br><br>
+        <a href="https://x.com/AmazonIN?mx=2" target="_blank" >Twitter </a><br><br>
+        <a href="https://www.instagram.com/amazondotin/#" target="_blank">Instagram</a><br><br>
+        </section>
+    </footer>
+</body>
+</html>
